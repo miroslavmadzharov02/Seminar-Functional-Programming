@@ -7,4 +7,4 @@ areNotEqualGuards num1 num2
     | otherwise = False 
 
 isNumInInterval :: Int -> Int -> Int -> Bool 
-isNumInInterval num leftBorder rightBorder = num >= leftBorder && num <= rightBorder
+isNumInInterval num leftBorder rightBorder = num >= min leftBorder rightBorder && num <= max leftBorder rightBorder

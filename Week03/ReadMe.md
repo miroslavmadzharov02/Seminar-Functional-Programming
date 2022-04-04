@@ -93,7 +93,7 @@ Define the function sine, that accepts a whole number and a real number (represe
 
 Reference the formula for writing sin(x) around the origin:
 
-![Alt text](pictures/Task5.png?raw=true "Task5")
+![Alt text](https://raw.githubusercontent.com/SimeonHristov99/FP_IS_Summer_21-22/main/Week_03%20-%20Recursion%20(part%202)/pictures/Task5.png)
 
 Test cases:
 

@@ -1,0 +1,1 @@
+dominates f g = all (\ x -> f x >= g x)

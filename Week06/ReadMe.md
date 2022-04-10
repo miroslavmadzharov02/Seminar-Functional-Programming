@@ -35,7 +35,7 @@ Test cases:
 
 # Task 4
 
-![Alt text](assets/point.png?raw=true "forHomeTask2.png")
+![Alt text](https://raw.githubusercontent.com/SimeonHristov99/FP_IS_Summer_21-22/main/Week_06%20-%20Preparation%20for%20Test%201%20(part%201)/assets/point.png)
 
 Test cases:
 

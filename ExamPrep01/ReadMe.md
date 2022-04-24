@@ -39,4 +39,4 @@ Define the function sine, that accepts a whole number and a real number (represe
 
 Reference the formula for writing sin(x) around the origin:
 
-![Alt text](assets/sin.png?raw=true "sin")
+![Alt text](https://raw.githubusercontent.com/SimeonHristov99/FP_IS_Summer_21-22/main/Additional_1/assets/sin.png)

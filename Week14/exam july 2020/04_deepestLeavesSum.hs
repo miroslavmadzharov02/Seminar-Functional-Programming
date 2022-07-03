@@ -15,7 +15,6 @@ getLevel (Node v l r) k = getLevel l (k - 1) ++ getLevel r (k - 1)
 
 height :: BTree -> Int
 height Empty = 0
-height (Node _ Empty Empty) = 1
 height (Node _ l r) = 1 + max (height l) (height r)
 
 t3 :: BTree

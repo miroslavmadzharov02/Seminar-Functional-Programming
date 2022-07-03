@@ -1,7 +1,3 @@
-# Task 0
-
-Solve the sample theory test (Theory.pdf).
-
 # Task 1
 
 A number is interesting if and only if it is evenly divided by the sum of its digits. Define a predicate that checks whether a number is interesting.

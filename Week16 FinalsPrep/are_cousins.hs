@@ -15,9 +15,11 @@ getLevel (Node v l r) k = getLevel l (k-1) ++ getLevel r (k-1)
 couples :: [a] -> [(a,a)]
 couples xs = [(x1,x2) | (x1,x2) <- zip val1 val2]
     where
-        val1 = [x | (x, i) <- zip xs [0..], mod i 2 == 0]
-        val2 = [x | (x, i) <- zip xs [0..], mod i 2 /= 0]
+        val1 = [x | (x, i) <- zip xs [0..], even i]
+        val2 = [x | (x, i) <- zip xs [0..], odd i]
 
+-- getHeightOfValue t2 3 == 1
+-- getHeightOfValue t2 7 == 2
 getHeightOfValue :: (Eq a) => BTree a -> a -> Int
 getHeightOfValue t val = helper 0
     where
@@ -28,8 +30,14 @@ getHeightOfValue t val = helper 0
 
 areCousins :: (Eq a) => BTree a -> a -> a -> Bool
 areCousins t val1 val2
+--  if values are not on the same height they cannot be cousins
     | getHeightOfValue t val1 /= getHeightOfValue t val2 = False
+--  get all the instances val1 and val2 are siblings (have the same parent)
+--  if that is null then val1 and val2 are not siblings -> they are cousins
     | otherwise = null [(x,y) | (x,y) <- couples (getLevel t (getHeightOfValue t val1)), x == val1 || x == val2, y == val1 || y == val2, x /= y]
+
+--  couples (getLevel t2 (getHeightOfValue t2 8)) == [(4,7),(9,8)] -> the above list will be null -> cousins
+--  couples (getLevel t1 (getHeightOfValue t1 2)) == [(2,3)] -> the above list gets values -> not null -> not cousins
 
 data BTree a = Nil | Node a (BTree a) (BTree a)
 
@@ -42,3 +50,10 @@ t2 = Node 5 (Node 3 (Node 4 Nil Nil)
  (Node 7 Nil Nil))
  (Node 2 (Node 9 Nil Nil)
  (Node 8 Nil Nil))
+
+ --t2 
+ --       5
+ --     /   \
+ --    3      2
+ --   / \    / \
+ --  4   7  9   8
